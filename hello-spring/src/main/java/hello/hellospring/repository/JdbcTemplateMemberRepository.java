@@ -60,7 +60,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository {
             Member member = new Member();
             member.setId(rs.getLong("id"));
             member.setName(rs.getString("name"));
-            return member
-        }
+            return member;
+        };
     }
 }
