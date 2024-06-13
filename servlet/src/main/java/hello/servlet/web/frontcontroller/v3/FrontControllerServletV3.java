@@ -21,16 +21,16 @@ import java.util.Map;
 
 
 //* : 하위 호출은 다호출됨.
-@WebServlet(name = "frontControllerServletV2", urlPatterns = "/front-controller/v2/*")
+@WebServlet(name = "frontControllerServletV3", urlPatterns = "/front-controller/v3/*")
 public class FrontControllerServletV3 extends HttpServlet {
 
     private Map<String, ControllerV3> controllerMap = new HashMap<>();
 
 
     public FrontControllerServletV3() {
-        controllerMap.put("/front-controller/v2/members/new-form", new MemberFormControllerV3());
-        controllerMap.put("/front-controller/v2/members/save", new MemberSaveControllerV3());
-        controllerMap.put("/front-controller/v2/members", new MemberListControllerV3());
+        controllerMap.put("/front-controller/v3/members/new-form", new MemberFormControllerV3());
+        controllerMap.put("/front-controller/v3/members/save", new MemberSaveControllerV3());
+        controllerMap.put("/front-controller/v3/members", new MemberListControllerV3());
     }
 
     @Override
