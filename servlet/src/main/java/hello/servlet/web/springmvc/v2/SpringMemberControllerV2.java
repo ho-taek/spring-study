@@ -12,16 +12,17 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
+@RequestMapping("/sprigmvc/v2/members/")
 public class SpringMemberControllerV2 {
 
     private MemberRepository memberRepository = MemberRepository.getInstance();
 
-    @RequestMapping("/springmvc/v2/members/new-forms")
+    @RequestMapping("new-forms")
     public ModelAndView newForm() {
         return new ModelAndView("new-forms");
     }
 
-    @RequestMapping("springmvc/v2/members/members")
+    @RequestMapping("save")
     public ModelAndView save() {
         List<Member> members = memberRepository.findAll();
         ModelAndView mv = new ModelAndView("members");
@@ -29,7 +30,7 @@ public class SpringMemberControllerV2 {
         return mv;
     }
 
-    @RequestMapping("/springmvc/v2/members/save")
+    @RequestMapping
     public ModelAndView members(HttpServletRequest request, HttpServletResponse response){
         String username = request.getParameter("username");
         int age = Integer.parseInt(request.getParameter("age"));
